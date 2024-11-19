@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f2f0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header,
+footer {
+    text-align: left;
+    color: black;
+    border-radius: 0 0 15px 15px;
+    justify-content: space-between;
+    background-color: #f6eeea;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    margin: 20px 0;
+}
+
+.content {
+    
+    flex: 1;
+}
+
+.content-wrapper {
+    padding: 20px 20px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.content-wrapper img {
+    max-width: 40%;
+    border-radius: 20px;
+}
+
+.costumization {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+
+.roundClickable {
+    align-items: center;
+    appearance: none;
+    background-color: #ffffff;
+    border-radius: 24px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    justify-content: center !important;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    padding: 2px 20px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+}
+
+.roundClickable:hover {
+    background: #d5bdaf8e;
+    color: black;
+}
+
+.roundClickable:active {
+    outline: none;
+    border: 2px solid #967f72;
+}
+
+.roundClickable:focus {
+    outline: none;
+    border: 2px solid #967f72;
+}
