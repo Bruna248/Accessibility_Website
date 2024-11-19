@@ -55,9 +55,11 @@ function toggleShemeOptions(selection) {
     if (selection === 'manually') {
         document.getElementById('backgroundColorSelection').style.display = 'block';
         document.getElementById('colorSchemeSelection').style.display = 'none';
+        resetColorScheme();
     } else {
         document.getElementById('backgroundColorSelection').style.display = 'none';
         document.getElementById('colorSchemeSelection').style.display = 'block';
+        resetColorScheme();
     }
 }
 
@@ -84,11 +86,18 @@ function resetColorScheme() {
     document.body.style.height = '100vh';
     popup.style.height = '100vh';
     
+    // Reset text color for #main
+    const main = document.getElementById('main');
+    if (main) {
+        main.style.color = ''; // Reset to default
+    }
+    
     listItems.forEach(item => {
         item.style.backgroundColor = '#fff';
     });
     resetHoverStyles();
 }
+
 
 // Helper function to set hover styles
 function setHoverStyles(color) {
@@ -111,11 +120,9 @@ function changeColorScheme(scheme) {
     console.log(`Color scheme changed to: ${scheme}`);
     resetColorScheme();
 
-    // Reference to the span to update the selected option text
     const selectedOptionSpan = document.getElementById('selectedOption');
-    
+    const main = document.getElementById('main');
 
-    // Update the span text based on the chosen scheme
     switch (scheme) {
         case 'highContrast':
             selectedOptionSpan.textContent = 'High Contrast';
@@ -123,18 +130,20 @@ function changeColorScheme(scheme) {
             document.body.style.color = '#fff';
             popup.style.backgroundColor = '#000';
             popup.style.color = '#fff';
+            if (main) main.style.color = '#fff'; // Ensure text is white
             listItems.forEach(item => {
                 item.style.backgroundColor = '#000';
             });
             setHoverStyles('#fff');
             break;
-        
+
         case 'darkMode':
             selectedOptionSpan.textContent = 'Dark Mode';
             document.body.style.backgroundColor = '#333';
             document.body.style.color = '#ccc';
             popup.style.backgroundColor = '#333';
             popup.style.color = '#ccc';
+            if (main) main.style.color = '#ccc'; // Adjust text color
             listItems.forEach(item => {
                 item.style.backgroundColor = '#333';
             });
