@@ -28,229 +28,236 @@
 
 <body style="background-color: #f9f2f0;">
     <header class="header-container">
-        <b><a href="index.html" style="display: hidden; text-decoration: none; color:#000">Persona Card</a></b>
+        <b><a href="#main_content" style="display: hidden; text-decoration: none; color:#000">Persona Card</a></b>
         <div class="costumization">
             To adjust the page according to your preferences:
-            <button class="button-17 roundClickable" role="button" onclick="openPopup()" alt="Customize Button">Customize</button>
+            <button class="button-17 roundClickable" role="button" onclick="openPopup()"
+                alt="Customize Button">Customize</button>
 
         </div>
     </header>
 
-    <main>
+    <main id="main_content">
         <div class="container" id="main">
             <h1 class="center" style="padding-bottom: 23px; padding-top:10px">High school student with autism</h1>
-            <main>
-                <div class="content-wrapper">
-                    <img src="imageTrevor.jpeg"
-                        alt="This image is an illustration of an young man with black hair and fair skin, wearing a white t-shirt and a gold watch. He is sitting at a desk working on a MacBook laptop. There is also a storage box on the desk, a plant in a pot and a lamp. On the side wall you can see part of a poster with a graphic. The whole picture is in shades of grey, except for the boy and his outfit." />
 
-                    <div class="content">
-                        <ul>
-                            <li>Trevor is a bright 18-year-old who plays games and watches videos on his laptop. He
-                                lives at
-                                home with his parents.
-                            <li>He atends a special school where the teachers and staff help with his social and
-                                communication
-                                challenges from his Autism Spectrum Disorder.
-                            <li>He has problems with visual information and recognizing things on the page, and his
-                                reading skills are not helped by his trouble concentrating
-                                on the page or screen long enough to read.
-                            <li>His teachers showed him how to make the text bigger on
-                                the page, and told him how to use a printable view to hide all the
-                                ads with moving images that distract him, because he reads every word on the page very
-                                carefully
-                                and literally.
-                            <li>He can be easily confused by colloquialisms and metaphors. He can also be overwhelmed
-                                by sites that offer too many choices.
-                            <li>He likes using the school’s forum to talk to his
-                                friends. It’s easier to just read what they want to say than to listen and try to figure
-                                out their
-                                facial expressions.
-                            <li>He shares a laptop with the family, but has first dibs on it because his
-                                parents want him to get his schoolwork done. He uses it for homework, but he really
-                                likes games with
-                                repetitive actions.
-                        </ul>
-                    </div>
+            <div class="content-wrapper">
+                <img src="imageTrevor.jpeg"
+                    alt="This image is an illustration of an young man with black hair and fair skin, wearing a white t-shirt and a gold watch. He is sitting at a desk working on a MacBook laptop. There is also a storage box on the desk, a plant in a pot and a lamp. On the side wall you can see part of a poster with a graphic. The whole picture is in shades of grey, except for the boy and his outfit." />
 
-            </main>
-        </div>
-
-
-        <div id="settingsPopup" class="popup">
-            <span class="popup-close" onclick="closePopup()">&times;</span>
-            <h5>Customize Page Settings</h5>
-
-            <div class="item">
-                <label for="fontSize">Font Size:</label>
-                <input class="slider setting" type="range" id="fontSize" min="12" max="24" value="16"
-                    oninput="adjustFontSize(this.value)">
-                <div class="slider-labels">
-                    <span>12</span>
-                    <span>14</span>
-                    <span>16</span>
-                    <span>18</span>
-                    <span>20</span>
-                    <span>22</span>
-                    <span>24</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <label for="marginSize">Margin Size for List Items:</label>
-                <input class="slider setting" type="range" id="marginSize" min="0" max="50" step="10" value="10"
-                    oninput="adjustMarginSize(this.value)">
-                <div class="slider-labels">
-                    <span>0</span>
-                    <span style="margin-left: 5px;">10</span>
-                    <span>20</span>
-                    <span>30</span>
-                    <span>40</span>
-                    <span>50</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <label for="letterSpacing">Letter Spacing:</label>
-                <input class="slider setting" type="range" id="letterSpacing" min="0" max="3" step="0.5" value="0"
-                    oninput="adjustLetterSpacing(this.value)">
-                <div class="slider-labels">
-                    <span>0</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <label for="fontFamily">Font Family:</label>
-                <div class="dropdown-wrapper">
-                    <select class="setting dropdown roundClickable" id="fontFamily"
-                        onchange="changeFontFamily(this.value)">
-                        <option value="Arial, sans-serif">Arial</option>
-                        <option value="'Times New Roman', Times, serif">Times New Roman</option>
-                        <option value="Georgia, serif">Georgia</option>
-                        <option value="Tahoma, sans-serif">Tahoma</option>
-                        <option value="Constantia, 'Times New Roman', serif">Constantia</option>
-                        <option value="'American Typewriter', serif">American Typewriter</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="item-noColor">
-                <p>How would you like to change the colors of the page?</p>
-                <label><input type="radio" name="colorSchemes" value="manually" onclick="toggleShemeOptions('manually')"
-                        checked> Manually</label>
-                <label><input type="radio" name="colorSchemes" value="schemes" onclick="toggleShemeOptions('schemes')">
-                    With predefined schemes</label>
-            </div>
-
-            <div class="item" id="backgroundColorSelection">
-                Select Background Color:
-                <div class="dropdown-wrapper">
-                    <div class="setting dropdown roundClickable" tabindex="0"
-                        style="width: 100%; margin: 10px 0px !important;" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="label" aria-expanded="false">
-                        <div id="selectedColorDisplay" class="selected-color-display palette-btn-small"></div>
-                        <span style="margin-left: 1px;">Select a color</span>
-                    </div>
-                    <div class="palette-container setting dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="palette-btn" style="background-color: #e8e8e8;"
-                            onclick="changeBgColor('#e8e8e8')"></button>
-                        <button class="palette-btn" style="background-color: #f9f2f0;"
-                            onclick="event.stopPropagation(); changeBgColor('#f9f2f0');"></button>
-                        <button class="palette-btn" style="background-color: #f6eeea;"
-                            onclick="changeBgColor('#f6eeea');"></button>
-                        <button class="palette-btn" style="background-color: #e4d7c9;"
-                            onclick="changeBgColor('#e4d7c9')"></button>
-                        <button class="palette-btn" style="background-color: #D5BDAF;"
-                            onclick="changeBgColor('#D5BDAF')"></button>
-                        <button class="palette-btn" style="background-color: #c0a89b;"
-                            onclick="changeBgColor('#c0a89b')"></button>
-                        <button class="palette-btn" style="background-color: #967f72;"
-                            onclick="changeBgColor('#967f72')"></button>
-                        <button class="palette-btn" style="background-color: #ac93a6;"
-                            onclick="changeBgColor('#ac93a6')"></button>
-                        <button class="palette-btn" style="background-color: #eec2a5;"
-                            onclick="changeBgColor('#eec2a5')"></button>
-                        <button class="palette-btn" style="background-color: #e9cda2;"
-                            onclick="changeBgColor('#e9cda2')"></button>
-                        <button class="palette-btn" style="background-color: #b9d5c3;"
-                            onclick="changeBgColor('#b9d5c3')"></button>
-                        <button class="palette-btn" style="background-color: #a6ac86;"
-                            onclick="changeBgColor('#a6ac86')"></button>
-                        <button class="palette-btn" style="background-color: #86a192;"
-                            onclick="changeBgColor('#86a192')"></button>
-                        <button class="palette-btn" style="background-color: #87a7a2;"
-                            onclick="changeBgColor('#87a7a2')"></button>
-                        <button class="palette-btn" style="background-color: #6f9dac;"
-                            onclick="changeBgColor('#6f9dac')"></button>
-                        <button class="palette-btn" style="background-color: #7197ac;"
-                            onclick="changeBgColor('#7197ac')"></button>
-                    </div>
+                <div class="content">
+                    <ul>
+                        <li>Trevor is a bright 18-year-old who plays games and watches videos on his laptop. He
+                            lives at
+                            home with his parents.
+                        <li>He atends a special school where the teachers and staff help with his social and
+                            communication
+                            challenges from his Autism Spectrum Disorder.
+                        <li>He has problems with visual information and recognizing things on the page, and his
+                            reading skills are not helped by his trouble concentrating
+                            on the page or screen long enough to read.
+                        <li>His teachers showed him how to make the text bigger on
+                            the page, and told him how to use a printable view to hide all the
+                            ads with moving images that distract him, because he reads every word on the page very
+                            carefully
+                            and literally.
+                        <li>He can be easily confused by colloquialisms and metaphors. He can also be overwhelmed
+                            by sites that offer too many choices.
+                        <li>He likes using the school’s forum to talk to his
+                            friends. It’s easier to just read what they want to say than to listen and try to figure
+                            out their
+                            facial expressions.
+                        <li>He shares a laptop with the family, but has first dibs on it because his
+                            parents want him to get his schoolwork done. He uses it for homework, but he really
+                            likes games with
+                            repetitive actions.
+                    </ul>
                 </div>
 
-                Select Persona Text Color:
-                <div class="center" style="margin-top: 5px;">
-                    <button class="palette-btn" style="background-color: #fff;"
-                        onclick="changePersonaTextColor('#fff')"></button>
-                    <button class="palette-btn" style="background-color: #000;"
-                        onclick="changePersonaTextColor('#000')"></button>
-                </div>
-            </div>
+    </main>
+    </div>
 
 
-            <div class="item" id="colorSchemeSelection">
-                Select Color Scheme:
-                <div class="dropdown-wrapper">
-                    <div class="setting dropdown roundClickable" tabindex="0"
-                        style="width: 100%; margin: 10px 0px !important;" id="dropdownMenuButton2" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <span id="selectedOption">Default</span>
-                    </div>
-                    <div class="palette-container setting dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item roundClickable"
-                        onclick="event.stopPropagation(); changeColorScheme('default')">Default</button>
+    <div id="settingsPopup" class="popup">
+        <h2>Customize Page Settings</h2>
 
-                        <span>Color Scheme Options:</span>
-                        <button class="dropdown-item roundClickable"
-                            onclick="event.stopPropagation(); changeColorScheme('highContrast')">High Contrast</button>
-                        <button class="dropdown-item roundClickable"
-                            onclick="event.stopPropagation(); changeColorScheme('darkMode')">Dark Mode</button>
-                        <span>Color Blindness Options:</span>
-                        <button class="dropdown-item roundClickable !important"
-                            onclick="event.stopPropagation(); changeColorScheme('deuteranopia')">Deuteranopia</button>
-                        <button class="dropdown-item roundClickable"
-                            onclick="event.stopPropagation(); changeColorScheme('protanopia')">Protanopia</button>
-                        <button class="dropdown-item roundClickable"
-                            onclick="event.stopPropagation(); changeColorScheme('tritanopia')">Tritanopia</button>
-                        <button class="dropdown-item roundClickable"
-                            onclick="event.stopPropagation(); changeColorScheme('greyScale')">Grey Scale</button>
-                    </div>
-                </div>
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
-                <filter id="deuteranopiaFilter">
-                    <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0" />
-                </filter>
-                <filter id="protanopiaFilter">
-                    <feColorMatrix type="matrix"
-                        values="0.566 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0" />
-                </filter>
-                <filter id="tritanopiaFilter">
-                    <feColorMatrix type="matrix"
-                        values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0" />
-                </filter>
-            </svg>
-
-
-            <div class="center" style="padding-bottom: 20px;">
-                <button class="button-17 roundClickable" role="button" onclick="closePopup()" alt="Close Popup Button">Close</button>
+        <div class="item">
+            <label for="fontSize">Font Size:</label>
+            <input class="slider setting" type="range" id="fontSize" min="12" max="24" value="16"
+                oninput="adjustFontSize(this.value)">
+            <div class="slider-labels">
+                <span>12</span>
+                <span>14</span>
+                <span>16</span>
+                <span>18</span>
+                <span>20</span>
+                <span>22</span>
+                <span>24</span>
             </div>
         </div>
 
-        <script src="javaScript.js"></script>
+        <div class="item">
+            <label for="marginSize">Margin Size for List Items:</label>
+            <input class="slider setting" type="range" id="marginSize" min="0" max="50" step="10" value="10"
+                oninput="adjustMarginSize(this.value)">
+            <div class="slider-labels">
+                <span>0</span>
+                <span style="margin-left: 5px;">10</span>
+                <span>20</span>
+                <span>30</span>
+                <span>40</span>
+                <span>50</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <label for="letterSpacing">Letter Spacing:</label>
+            <input class="slider setting" type="range" id="letterSpacing" min="0" max="3" step="0.5" value="0"
+                oninput="adjustLetterSpacing(this.value)">
+            <div class="slider-labels">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <label for="fontFamily">Font Family:</label>
+            <div class="dropdown-wrapper">
+                <select class="setting dropdown roundClickable" id="fontFamily" onchange="changeFontFamily(this.value)">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="Tahoma, sans-serif">Tahoma</option>
+                    <option value="Constantia, 'Times New Roman', serif">Constantia</option>
+                    <option value="'American Typewriter', serif">American Typewriter</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="item-noColor">
+            <p>How would you like to change the colors of the page?</p>
+            <label><input type="radio" name="colorSchemes" value="manually" onclick="toggleShemeOptions('manually')"
+                    checked> Manually</label>
+            <label><input type="radio" name="colorSchemes" value="schemes" onclick="toggleShemeOptions('schemes')">
+                With predefined schemes</label>
+        </div>
+
+        <div class="item" id="backgroundColorSelection">
+            Select Background Color:
+            <div class="dropdown-wrapper">
+                <div class="setting dropdown roundClickable" tabindex="0"
+                    style="width: 100%; margin: 10px 0px !important;" id="dropdownMenuButton" data-toggle="dropdown">
+                    <div id="selectedColorDisplay" class="selected-color-display palette-btn-small"></div>
+                    <span style="margin-left: 1px;">Select a color</span>
+                </div>
+                <div class="palette-container setting dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="palette-btn" style="background-color: #e8e8e8;" onclick="changeBgColor('#e8e8e8')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #f9f2f0;"
+                        onclick="event.stopPropagation(); changeBgColor('#f9f2f0');"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #f6eeea;" onclick="changeBgColor('#f6eeea');"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #e4d7c9;" onclick="changeBgColor('#e4d7c9')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #D5BDAF;" onclick="changeBgColor('#D5BDAF')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #c0a89b;" onclick="changeBgColor('#c0a89b')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #967f72;" onclick="changeBgColor('#967f72')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #ac93a6;" onclick="changeBgColor('#ac93a6')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #eec2a5;" onclick="changeBgColor('#eec2a5')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #e9cda2;" onclick="changeBgColor('#e9cda2')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #b9d5c3;" onclick="changeBgColor('#b9d5c3')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #a6ac86;" onclick="changeBgColor('#a6ac86')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #86a192;" onclick="changeBgColor('#86a192')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #87a7a2;" onclick="changeBgColor('#87a7a2')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #6f9dac;" onclick="changeBgColor('#6f9dac')"
+                        aria-label="select color button"></button>
+                    <button class="palette-btn" style="background-color: #7197ac;" onclick="changeBgColor('#7197ac')"
+                        aria-label="select color button"></button>
+                </div>
+            </div>
+
+            Select Persona Text Color:
+            <div class="center" style="margin-top: 5px;">
+                <button class="palette-btn" style="background-color: #fff;" onclick="changePersonaTextColor('#fff')"
+                    aria-label="select color button"></button>
+                <button class="palette-btn" style="background-color: #000;" onclick="changePersonaTextColor('#000')"
+                    aria-label="select color button"></button>
+            </div>
+        </div>
+
+
+        <div class="item" id="colorSchemeSelection">
+            Select Color Scheme:
+            <div class="dropdown-wrapper">
+                <div class="setting dropdown roundClickable" tabindex="0"
+                    style="width: 100%; margin: 10px 0px !important;" id="dropdownMenuButton2" data-toggle="dropdown"
+                    aria-haspopup="true">
+                    <span id="selectedOption">Default</span>
+                </div>
+                <div class="palette-container setting dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('default')"
+                        alt="select color button">Default</button>
+
+                    <span>Color Scheme Options:</span>
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('highContrast')"
+                        alt="select color button">High Contrast</button>
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('darkMode')" alt="select color button">Dark
+                        Mode</button>
+                    <span>Color Blindness Options:</span>
+                    <button class="dropdown-item roundClickable !important"
+                        onclick="event.stopPropagation(); changeColorScheme('deuteranopia')"
+                        alt="select color button">Deuteranopia</button>
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('protanopia')"
+                        alt="select color button">Protanopia</button>
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('tritanopia')"
+                        alt="select color button">Tritanopia</button>
+                    <button class="dropdown-item roundClickable"
+                        onclick="event.stopPropagation(); changeColorScheme('greyScale')" alt="select color button">Grey
+                        Scale</button>
+                </div>
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+            <filter id="deuteranopiaFilter">
+                <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0" />
+            </filter>
+            <filter id="protanopiaFilter">
+                <feColorMatrix type="matrix"
+                    values="0.566 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0" />
+            </filter>
+            <filter id="tritanopiaFilter">
+                <feColorMatrix type="matrix"
+                    values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0" />
+            </filter>
+        </svg>
+
+
+        <div class="center" style="padding-bottom: 20px;">
+            <button class="button-17 roundClickable" role="button" onclick="closePopup()"
+                alt="Close Popup Button">Close</button>
+        </div>
+    </div>
+
+    <script src="javaScript.js"></script>
 </body>
 
 </html>
